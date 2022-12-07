@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D1A46706-9201-4153-8BCE-016E5291B61F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PaymentFlowAnalysis.Service</RootNamespace>
+    <AssemblyName>PaymentFlowAnalysis.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.6.21.0\lib\net461\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.21.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.21.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.21.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.21.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMappings\Mappers\BankTransactionDetailMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\BigTradeMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\BlackAccountIPMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\BlackAccountEmailMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\BankTransactionMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\BankSafeDepositBoxMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\BankAccountInfoMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\BlackAccountPhoneMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\BlackAccountMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\CryptoPersonalInfoPhoneMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\CryptoTransactionInfoMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\CryptoQueryDetailPersonalMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\CryptoPersonalInfoLoginIPListMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\CryptoQueryMasterMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\CryptoQueryMapper.cs" />
+    <Compile Include="AutoMappings\Mappers\CryptoWallertInfoReceiveMapper.cs" />
+    <Compile Include="AutoMappings\MappingConfiguration.cs" />
+    <Compile Include="Factories\DepartmentFactory.cs" />
+    <Compile Include="Models\AuthLoginInfo.cs" />
+    <Compile Include="Models\AuthorizationCertificate.cs" />
+    <Compile Include="Models\BankAccountInfoDTO.cs" />
+    <Compile Include="Models\BankSafeDepositBoxDTO.cs" />
+    <Compile Include="Models\BankTransactionExpandDTO.cs" />
+    <Compile Include="Models\BankTransactionDTO.cs" />
+    <Compile Include="Models\BigTradeDTO.cs" />
+    <Compile Include="Models\BlackAccountEmailDTO.cs" />
+    <Compile Include="Models\BlackAccountIPDTO.cs" />
+    <Compile Include="Models\BlackAccountPhoneDTO.cs" />
+    <Compile Include="Models\CryptoPersonalInfoPhoneDTO.cs" />
+    <Compile Include="Models\CryptoTransactionInfoDTO.cs" />
+    <Compile Include="Models\CryptoQueryDetailPersonalDTO.cs" />
+    <Compile Include="Models\CryptoPersonalInfoLoginIPListDTO.cs" />
+    <Compile Include="Models\CryptoQueryMasterDTO.cs" />
+    <Compile Include="Models\CryptoQueryDTO.cs" />
+    <Compile Include="Models\CryptoQueryMasterServiceModel.cs" />
+    <Compile Include="Models\NotificationInfoDTO.cs" />
+    <Compile Include="Models\PaginationModels.cs" />
+    <Compile Include="Models\SysUserListServiceModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\BankTransactionService.cs" />
+    <Compile Include="Services\CryptoPersonalInfoService.cs" />
+    <Compile Include="Services\CryptoTransactionInfoService.cs" />
+    <Compile Include="Services\Interfaces\IBankTransactionService.cs" />
+    <Compile Include="Services\CryptoPersonalInfoPictureService.cs" />
+    <Compile Include="Services\CryptoPersonalInfoIPService.cs" />
+    <Compile Include="Services\CryptoPersonalInfoWalletService.cs" />
+    <Compile Include="Services\CryptoPersonalInfoPhoneService.cs" />
+    <Compile Include="Services\Interfaces\ICryptoPersonalInfoService.cs" />
+    <Compile Include="Services\Interfaces\ICryptoPersonalInfoPictureService.cs" />
+    <Compile Include="Services\Interfaces\ICryptoPersonalInfoIPService.cs" />
+    <Compile Include="Services\Interfaces\ICryptoPersonalInfoWalletService.cs" />
+    <Compile Include="Services\Interfaces\ICryptoPersonalInfoPhoneService.cs" />
+    <Compile Include="Services\Interfaces\ICryptoTransactionInfoService.cs" />
+    <Compile Include="Services\Interfaces\IMainLogService.cs" />
+    <Compile Include="Services\Interfaces\INotificationInfoService.cs" />
+    <Compile Include="Services\MainLogService.cs" />
+    <Compile Include="Services\BigTradeService.cs" />
+    <Compile Include="Services\Interfaces\IBigTradeService.cs" />
+    <Compile Include="Services\Interfaces\ISysUserListService.cs" />
+    <Compile Include="Services\NotificationInfoService.cs" />
+    <Compile Include="Services\UserFileService.cs" />
+    <Compile Include="Services\Interfaces\IAuthService.cs" />
+    <Compile Include="Services\CryptoQueryDetailService.cs" />
+    <Compile Include="Services\CryptoQueryMasterService.cs" />
+    <Compile Include="Services\Interfaces\ICryptoQueryDetailService.cs" />
+    <Compile Include="Services\Interfaces\ICryptoQueryMasterService.cs" />
+    <Compile Include="Services\Interfaces\IPersonalInfoSearchService.cs" />
+    <Compile Include="Services\Interfaces\IUserFileService.cs" />
+    <Compile Include="Models\BlackAccountPageInfoDTO.cs" />
+    <Compile Include="Models\CryptoWallertInfoReceiveDTO.cs" />
+    <Compile Include="Services\BankSafeDepositBoxService.cs" />
+    <Compile Include="Services\CryptoWallertInfoReceiveService.cs" />
+    <Compile Include="Services\Interfaces\IBankSafeDepositBoxService.cs" />
+    <Compile Include="Services\Interfaces\ICryptoWallertInfoReceiveService.cs" />
+    <Compile Include="Services\Interfaces\IBankAccountInfoService.cs" />
+    <Compile Include="Services\Interfaces\IBlackAccountService.cs" />
+    <Compile Include="Services\BankAccountInfoService.cs" />
+    <Compile Include="Services\BlackAccountService.cs" />
+    <Compile Include="Services\PersonalInfoSearchService.cs" />
+    <Compile Include="Services\SysUserListService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PaymentFlowAnalysis.Common\PaymentFlowAnalysis.Common.csproj">
+      <Project>{cb0617a3-c1fb-4451-bdb8-1ff9de59dfc7}</Project>
+      <Name>PaymentFlowAnalysis.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PaymentFlowAnalysis.Core\PaymentFlowAnalysis.Core.csproj">
+      <Project>{d7e67f49-533b-433f-aefc-9b21ff3c606d}</Project>
+      <Name>PaymentFlowAnalysis.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

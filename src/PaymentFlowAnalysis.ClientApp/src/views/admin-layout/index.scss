@@ -1,0 +1,355 @@
+@import '../../app/styles/variables';
+
+$admin-class: '.' + $namespace + '-admin';
+
+$sidebar-width: 240px;
+$navbar-z-index: 118;
+$sidebar-z-index: 120;
+$sidebar-dimmer-z-index: 119;
+
+@mixin media-admin-desktop-min-width {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+$default-theme-sidebar-bg-color: #0f172a;
+
+$default-theme-text-secondary-color: #6e6b7b;
+
+// admin
+#{$admin-class} {
+  height: 100%;
+}
+
+#{$admin-class}-content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 6.75rem;
+
+  @include media-admin-desktop-min-width {
+    padding-left: calc(1rem + #{$sidebar-width});
+  }
+}
+
+// navbar
+#{$admin-class}-navbar-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 1.3rem 1rem 0;
+  z-index: $navbar-z-index;
+  background-color: $app-body-bg-color;
+
+  @include media-admin-desktop-min-width {
+    padding-left: calc(1rem + #{$sidebar-width});
+  }
+}
+
+#{$admin-class}-navbar {
+  position: relative;
+  background-color: #fff;
+  color: $app-primary-color;
+  min-height: 56px;
+  border-radius: 0.428rem;
+  box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+  width: 100%;
+  padding: 0;
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    .fileSelectContainer{
+      display: flex;
+      align-items: center;
+      .fileSelect{
+        margin-bottom: 0;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .nav-link {
+    color: inherit;
+  }
+
+  // menu button
+  .nav-link.menu-btn {
+    width: 36px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .badge {
+    float: right;
+    margin-bottom: -15px;
+    font-size: 10px;
+    border-radius: 50rem;
+  }
+
+  .fa-bell {
+    cursor: pointer;
+  }
+
+  .username {
+    // font-size: 0.875rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    margin-top: 10px;
+    padding-left: 0.5rem;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  // 使用者下拉選單
+  .user-dropdown {
+    padding: 0 1rem;
+
+    .dropdown-toggle {
+      display: flex;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      right: -0.5rem;
+      left: auto;
+      top: 130%;
+      box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+    }
+
+    .dropdown-toggle::after {
+      display: none;
+    }
+
+    .username {
+      display: block;
+      // font-size: 0.875rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+      margin-top: 4px;
+    }
+
+    .avatar {
+      display: block;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+  }
+}
+
+// sidebar
+#{$admin-class}-sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: $default-theme-sidebar-bg-color;
+  box-shadow: 0 0 15px 0 rgba(34, 41, 47, 5%);
+  height: 100%;
+
+  @include media-admin-desktop-min-width {
+    box-shadow: 0 0 24px 0 rgba(34, 41, 47, 0.1);
+  }
+
+  &-wrapper {
+    display: none;
+    top: 0;
+    right: 0;
+    left: -$sidebar-width;
+    bottom: 0;
+    position: fixed;
+    width: $sidebar-width;
+    transform: translateZ(0);
+    transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background, 0s;
+    backface-visibility: hidden;
+    z-index: $sidebar-z-index;
+
+    @include media-admin-desktop-min-width {
+      display: block;
+      left: 0;
+    }
+
+    &.open {
+      display: block;
+      left: 0;
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    // padding: 0.35rem 1rem 0.3rem 1rem;
+    padding-left: 1rem;
+    padding-right: 0.8rem;
+    line-height: 64px;
+  }
+
+  &-brand {
+    display: block;
+    width: 100%;
+  }
+
+  &-brand-text {
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.01rem;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+
+    &:hover {
+      color: $app-primary-color;
+    }
+  }
+
+  &-btn-close {
+    display: block;
+    text-decoration: none;
+    color: $app-primary-color;
+
+    &:hover {
+      color: $app-primary-color;
+    }
+
+    @include media-admin-desktop-min-width {
+      display: none;
+    }
+  }
+
+  &-content {
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+#{$admin-class}-sidebar-dimmer {
+  display: none;
+  content: ' ';
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: $sidebar-dimmer-z-index;
+  background-color: rgba(0, 0, 0, 0.24);
+
+  &.active {
+    display: block;
+
+    @include media-admin-desktop-min-width {
+      display: none;
+    }
+  }
+}
+
+// menu
+#{$admin-class}-menu {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .nav-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #625f6e;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      color: #625f6e;
+    }
+  }
+
+  .nav-link-icon {
+    margin-right: 0.7rem;
+    display: block;
+    width: 24px;
+  }
+
+  .nav-link-icon-arrow {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.15s ease-in-out;
+  }
+
+  .nav-link-text {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: #fff;
+    background: linear-gradient(118deg, $app-primary-color, rgba(115, 103, 240, 0.7));
+    background-image: linear-gradient(118deg, rgb(115, 103, 240), rgba(115, 103, 240, 0.7));
+    box-shadow: 0 0 10px 1px rgba(115, 103, 240, 0.7);
+    border-radius: 4px;
+  }
+
+  .nav-link.open {
+    .nav-link-icon-arrow {
+      transform: rotate(90deg);
+    }
+
+    + #{$admin-class}-sub-menu {
+      display: block;
+      height: auto;
+    }
+  }
+}
+
+// sub-menu
+#{$admin-class}-sub-menu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  // transition: height 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+  .nav-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .nav-link-icon {
+    padding-left: 20px;
+  }
+
+  .nav-link-text {
+    padding-left: 10px;
+  }
+}
+
+.nrg-admin-sidebar-header {
+  .logo{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 60px;
+  }
+}
+
+.nrg-admin-sidebar-content::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-link-text:hover {
+  color: #7367f0;
+}
+
+
