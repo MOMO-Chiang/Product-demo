@@ -1,0 +1,8 @@
+// override variables
+@import '../variables.scss';
+
+// bootstrap.scss
+@import '~bootstrap/scss/bootstrap.scss';
+
+// override components
+@import './_buttons.scss';

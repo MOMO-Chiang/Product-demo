@@ -1,0 +1,47 @@
+@import '../../styles/variables';
+
+$card-border-radius: 5px;
+$card-bg-color: #fff;
+
+#{$app-class}-card {
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+  border: none;
+  border-radius: $card-border-radius;
+}
+
+#{$app-class}-card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+  padding: 1.313em 1.313em 0.438em 1.313em;
+  background-color: $card-bg-color;
+
+  &:first-child {
+    border-radius: $card-border-radius $card-border-radius 0 0;
+  }
+
+  + #{$app-class}-card-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+#{$app-class}-card-body {
+  background-color: $card-bg-color;
+  border-radius: $card-border-radius;
+
+  + #{$app-class}-card-footer {
+    padding-top: 0;
+  }
+}
+
+#{$app-class}-card-footer {
+  border: none;
+  background-color: $card-bg-color;
+
+  &:last-child {
+    border-radius: 0 0 $card-border-radius $card-border-radius;
+  }
+}

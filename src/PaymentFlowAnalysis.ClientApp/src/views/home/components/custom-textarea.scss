@@ -1,0 +1,64 @@
+.editor {
+  display: inline-flex;
+  gap: 10px;
+  font-family: monospace;
+  line-height: 30px;
+  border: black solid;
+  border-radius: 10px;
+  padding: 10px 5px 20px 5px;
+  width: 60vw;
+  //overflow-x: hidden;
+  overflow-y: auto;
+  //max-height: 40vh;
+}
+
+.line-numbers {
+  width: 20px;
+  text-align: right;
+  //overflow: hidden;
+}
+
+.line-numbers span {
+  counter-increment: linenumber;
+  position: relative;
+}
+
+.line-numbers span::before {
+  content: counter(linenumber);
+  display: block;
+  color: red;
+}
+
+.line-numbers span:after {
+  content: '.';
+  position: absolute;
+  color: red;
+  bottom: 0px;
+}
+
+// .line-numbers span:after {
+//   content: '';
+//   position: absolute;
+//   height: 3px;
+//   width: 3px;
+//   background-color: red;
+//   border-radius: 100%;
+//   bottom: 8px;
+//   left: 2px;
+// }
+
+.line-numbers-textarea {
+  line-height: 30px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  resize: none;
+  width: 60vw;
+  //max-height: 40vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  // min-width: 500px;
+  // max-height: 40vh;
+  //background: #282a3a;
+  //color: #fff;
+}

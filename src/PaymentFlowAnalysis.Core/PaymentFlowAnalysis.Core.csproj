@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7E67F49-533B-433F-AEFC-9B21FF3C606D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PaymentFlowAnalysis.Core</RootNamespace>
+    <AssemblyName>PaymentFlowAnalysis.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.2.0.78\lib\net461\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SqlBuilder, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.SqlBuilder.2.0.78\lib\net461\Dapper.SqlBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbConnectionFactory\DbConnectionFactory.cs" />
+    <Compile Include="DbConnectionFactory\IDbConnectionFactory.cs" />
+    <Compile Include="Entities\BankCode.cs" />
+    <Compile Include="Entities\BankAccountImport.cs" />
+    <Compile Include="Entities\BankSafeDepositBoxImport.cs" />
+    <Compile Include="Entities\BankTransaction.cs" />
+    <Compile Include="Entities\BankTransactionImport.cs" />
+    <Compile Include="Entities\BigTradeImport.cs" />
+    <Compile Include="Entities\BigTrade.cs" />
+    <Compile Include="Entities\BankSafeDepositBox.cs" />
+    <Compile Include="Entities\CryptoPersonalInfoLoginIPList_API.cs" />
+    <Compile Include="Entities\CryptoPersonalInfoPhone_API.cs" />
+    <Compile Include="Entities\CryptoPersonalInfoPicture.cs" />
+    <Compile Include="Entities\CryptoPersonalInfoIP.cs" />
+    <Compile Include="Entities\CryptoPersonalInfoPictures_API.cs" />
+    <Compile Include="Entities\CryptoPersonalInfoWallet.cs" />
+    <Compile Include="Entities\CryptoPersonalInfoPhone.cs" />
+    <Compile Include="Entities\BlackAccountPhone.cs" />
+    <Compile Include="Entities\BlackAccountIP.cs" />
+    <Compile Include="Entities\BlackAccountEmail.cs" />
+    <Compile Include="Entities\BlackAccount.cs" />
+    <Compile Include="Entities\CryptoPersonalInfoWallet_API.cs" />
+    <Compile Include="Entities\CryptoPersonalInfo_API.cs" />
+    <Compile Include="Entities\CryptoTransactionInfoCashIn_API.cs" />
+    <Compile Include="Entities\CryptoTransactionInfoCashOut_API.cs" />
+    <Compile Include="Entities\CryptoTransactionInfoVirtualCash_API.cs" />
+    <Compile Include="Entities\CryptoTransactionInfo_API.cs" />
+    <Compile Include="Entities\CryptoWallertInfoReceive.cs" />
+    <Compile Include="Entities\BankAccountInfo.cs" />
+    <Compile Include="Entities\MailLog.cs" />
+    <Compile Include="Entities\ForPersonWeb.cs" />
+    <Compile Include="Entities\NotificationInfo.cs" />
+    <Compile Include="Entities\SysUserList.cs" />
+    <Compile Include="Extension\ExtensionMethod.cs" />
+    <Compile Include="Models\BankTransactionModel.cs" />
+    <Compile Include="Models\BigTradeModel.cs" />
+    <Compile Include="Models\BankSafeDepositBoxModel.cs" />
+    <Compile Include="Entities\CryptoQueryDetail.cs" />
+    <Compile Include="Entities\CryptoQueryMaster.cs" />
+    <Compile Include="Entities\RelevantCryptoPersonalInfo.cs" />
+    <Compile Include="Entities\CryptoTransactionInfo.cs" />
+    <Compile Include="Entities\UserFile.cs" />
+    <Compile Include="Models\CryptoPersonalInfoWalletModel.cs" />
+    <Compile Include="Models\CryptoPersonalInfoPhoneModel.cs" />
+    <Compile Include="Models\CryptoQueryDetailModel.cs" />
+    <Compile Include="Models\CryptoQueryMasterModel.cs" />
+    <Compile Include="Models\DepartmentDBInfo.cs" />
+    <Compile Include="Models\PaginationQueryModel.cs" />
+    <Compile Include="Models\RelevantCryptoPersonalInfoModel.cs" />
+    <Compile Include="Models\BlackAccountModel.cs" />
+    <Compile Include="Models\CryptoWallertInfoReceiveModel.cs" />
+    <Compile Include="Models\BankAccountInfoModel.cs" />
+    <Compile Include="Models\CryptoTranscationInfoModel.cs" />
+    <Compile Include="Models\SysUserListModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BankCodeRepository.cs" />
+    <Compile Include="Repositories\BankTransactionImportRepository.cs" />
+    <Compile Include="Repositories\BankTransactionRepository.cs" />
+    <Compile Include="Repositories\CryptoPersonalInfoRepository.cs" />
+    <Compile Include="Repositories\CryptoTransactionRepository.cs" />
+    <Compile Include="Repositories\ForPersonWebRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBankCodeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBankTransactionImportRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBankTransactionRepository.cs" />
+    <Compile Include="Repositories\CryptoPersonalInfoPictureRepository.cs" />
+    <Compile Include="Repositories\CryptoPersonalInfoIPRepository.cs" />
+    <Compile Include="Repositories\CryptoPersonalInfoWalletRepository.cs" />
+    <Compile Include="Repositories\CryptoPersonalInfoPhoneRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICryptoPersonalInfoRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICryptoPersonalInfoPictureRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICryptoPersonalInfoIPRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICryptoPersonalInfoWalletRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICryptoPersonalInfoPhoneRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICryptoTransactionInfoRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IMainLogRepository.cs" />
+    <Compile Include="Repositories\Interfaces\INotificationInfoRepository.cs" />
+    <Compile Include="Repositories\MainLogRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IForPersonWebRepository.cs" />
+    <Compile Include="Repositories\BigTradeImportRepository.cs" />
+    <Compile Include="Repositories\BankSafeDepositBoxImportRepository.cs" />
+    <Compile Include="Repositories\BankAccountImportRepository.cs" />
+    <Compile Include="Repositories\BigTradeRepository.cs" />
+    <Compile Include="Repositories\BankSafeDepositBoxRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBigTradeImportRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBankSafeDepositBoxImportRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBankAccountImportRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBigTradeRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IRepositoryBase.cs" />
+    <Compile Include="Repositories\NotificationInfoRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\UserFileRepository.cs" />
+    <Compile Include="Repositories\CryptoQueryDetailRepository.cs" />
+    <Compile Include="Repositories\CryptoQueryMasterRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IPersonalInfoSearchRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICryptoQueryDetailRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICryptoQueryMasterRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IUserFileRepository.cs" />
+    <Compile Include="Repositories\BlackAccountEmailRepository.cs" />
+    <Compile Include="Repositories\BlackAccountIPRepository.cs" />
+    <Compile Include="Repositories\BlackAccountPhoneRepository.cs" />
+    <Compile Include="Repositories\BlackAccountRepository.cs" />
+    <Compile Include="Repositories\CryptoWallertInfoReceiveRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBankSafeDepositBoxRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBlackAccountEmailRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBlackAccountIPRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBlackAccountPhoneRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBlackAccountRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ICryptoWallertInfoReceiveRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IBankAccountInfoRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISysUserListRepository.cs" />
+    <Compile Include="Repositories\BankAccountInfoRepository.cs" />
+    <Compile Include="Repositories\PersonalInfoSearchRepository.cs" />
+    <Compile Include="Repositories\SysUserListRepository.cs" />
+    <Compile Include="UnitOfWork\IDMZUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWorkBase.cs" />
+    <Compile Include="UnitOfWork\DMZUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWorkBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PaymentFlowAnalysis.Common\PaymentFlowAnalysis.Common.csproj">
+      <Project>{cb0617a3-c1fb-4451-bdb8-1ff9de59dfc7}</Project>
+      <Name>PaymentFlowAnalysis.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

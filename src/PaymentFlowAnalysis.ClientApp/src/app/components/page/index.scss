@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+#{$app-class}-page-container {
+  padding-bottom: 1rem;
+}
+
+#{$app-class}-page-header {
+  margin-bottom: 1.5rem;
+}
+
+#{$app-class}-page-title {
+  font-weight: 500;
+  color: #636363;
+}

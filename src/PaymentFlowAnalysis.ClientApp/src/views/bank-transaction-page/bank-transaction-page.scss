@@ -1,0 +1,28 @@
+//摺疊table樣式
+.accordion-header {
+  table{
+    margin-bottom: 0;
+    vertical-align: middle;
+    table-layout:fixed;
+  }
+  thead{
+    th:first-child{
+      width: 10%;
+    }
+  }
+  tbody{
+    border-style: none;
+    td{
+      white-space: pre-wrap;
+      word-break: break-all;  
+    }
+    td:first-child{ 
+      width: 10%;
+    }
+  }
+}
+
+.accordion-button::after {
+  margin-left: 0 ;
+}
+

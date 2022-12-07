@@ -1,0 +1,33 @@
+// override btn-primary
+.btn-primary {
+  @include button-variant($primary, $primary, #fff);
+}
+
+// override btn-secondary
+.btn-secondary {
+  @include button-variant($secondary, $secondary, #fff);
+}
+
+// override btn-success
+.btn-success {
+  @include button-variant($success, $success, #fff);
+}
+
+// override btn-warning
+.btn-warning {
+  @include button-variant($warning, $warning, #fff);
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+// override btn-danger
+.btn-danger {
+  @include button-variant($danger, $danger, #fff);
+}
+
+// override btn-info
+.btn-info {
+  @include button-variant($info, $info, #fff);
+}

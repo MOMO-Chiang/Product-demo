@@ -1,0 +1,38 @@
+@import '../../app/styles/variables';
+
+#{$app-class}-login-page-container {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 10rem;
+  }
+}
+
+#{$app-class}-login-page-form {
+  @media screen and (min-width: 768px) {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#{$app-class}-login-page-card-header {
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+#{$app-class}-login-page-card-body {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 0.5rem;
+}
+
+#{$app-class}-login-page-card-footer {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  text-align: right;
+}

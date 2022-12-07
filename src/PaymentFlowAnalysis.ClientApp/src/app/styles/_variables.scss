@@ -1,0 +1,21 @@
+// app variables
+$namespace: 'nrg';
+$app-class: '.' + $namespace;
+
+$app-body-bg-color: #f8f8f8;
+
+$app-primary-color: #7367f0;
+$app-secondary-color: #82868b;
+$app-success-color: #28c76f;
+$app-warning-color: #ff9f43;
+$app-danger-color: #ea5455;
+$app-info-color: #00cfe8;
+$app-cancel-color: #82868b;
+
+// override bootstrap
+$primary: $app-primary-color;
+$secondary: $app-secondary-color;
+$success: $app-success-color;
+$warning: $app-warning-color;
+$danger: $app-danger-color;
+$info: $app-info-color;
